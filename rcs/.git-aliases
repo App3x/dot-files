@@ -1,0 +1,31 @@
+# zsh git plugin
+
+function current_branch() {
+    git_current_branch
+}
+
+alias gaa='git add --all'
+alias gb='git branch'
+alias gcan!='git commit -v -a --no-edit --amend'
+alias gca!='git commit -v -a --amend'
+alias gco='git checkout'
+alias gcm='git checkout master'
+alias gd='git diff'
+alias gf='git fetch'
+alias gl='git pull'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbm='git rebase master'
+alias gss='git status -s'
+alias grhh='git reset HEAD --hard'
+alias ggpush='git push origin $(git_current_branch)'
+alias glg='git log --stat'
+alias gclean='git clean -fd'
+
+# zsh git my
+
+alias g='git'
+alias grh1='git reset HEAD^1'
+function gcam {
+    git commit -a -m "$(current_branch) $1"
+}
