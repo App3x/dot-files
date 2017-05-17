@@ -17,7 +17,7 @@ function jo {
 # open pr plugin https://github.com/caarlos0/zsh-open-pr
 
 _get_repo() {
-  echo "$1" | sed -e "s/.*github.com[:/]\(.*\)\.git.*/\1/"
+  echo "$1" | sed -E -e "s/.*github.com:(.*)(\.git)/\1/"
 }
 
 _build_url() {
